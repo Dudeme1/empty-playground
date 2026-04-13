@@ -4,8 +4,16 @@
     <title>My Playground</title>
     <script>
         function sayHi() {
+            let uses = parseInt(localStorage.getItem("uses") || 0);
+
+            if (uses >= 5) {
+                alert("You've used up your 5 free uses! Subscribe to continue 🔒");
+                return;
+            }
             let name = document.getElementById("nameInput").value;
             alert("Hi " + name + "! 👋")
+
+            localStorage.setItem("uses", uses+1);
         }
     </script>
   </head>
