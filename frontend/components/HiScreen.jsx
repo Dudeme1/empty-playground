@@ -1,11 +1,12 @@
 import { useState } from "react"
+const API_URL = import.meta.env.VITE_API_URL || "";
 
 function HiScreen({ token, email }) {
   const [ name, setName ] = useState("");
   const [ message, setMessage ] = useState("");
   const sayHi = async () => {
     try {
-      const response = await fetch("http://localhost:3000/sayHi", {
+      const response = await fetch(`${API_URL}/sayHi`, {
       method: "POST",
       headers: {"Content-Type": "application/json",},
       body: JSON.stringify({ name: name, token: token })
@@ -22,7 +23,7 @@ function HiScreen({ token, email }) {
   }
   const handleSubscribe = async () => {
     try {
-      const response = await fetch("http://localhost:3000/subscribe", {
+      const response = await fetch(`${API_URL}/subscribe`, {
         method: "POST",
         headers: {"Content-Type": "application/json",},
         body: JSON.stringify({ token: token, email: email })
