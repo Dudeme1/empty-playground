@@ -9,7 +9,7 @@ function SignupScreen() {
 
   const handleSignup = async () => {
     try {
-      const response = await fetch(`${API_URL}/signup`, {
+      const response = await fetch(`${API_URL}/api/signup`, {
         method: "POST",
         headers: {"Content-Type": "application/json",},
         body: JSON.stringify({ email: email, password: password})

@@ -6,7 +6,7 @@ function HiScreen({ token, email }) {
   const [ message, setMessage ] = useState("");
   const sayHi = async () => {
     try {
-      const response = await fetch(`${API_URL}/sayHi`, {
+      const response = await fetch(`${API_URL}/api/sayHi`, {
       method: "POST",
       headers: {"Content-Type": "application/json",},
       body: JSON.stringify({ name: name, token: token })
@@ -23,7 +23,7 @@ function HiScreen({ token, email }) {
   }
   const handleSubscribe = async () => {
     try {
-      const response = await fetch(`${API_URL}/subscribe`, {
+      const response = await fetch(`${API_URL}/api/subscribe`, {
         method: "POST",
         headers: {"Content-Type": "application/json",},
         body: JSON.stringify({ token: token, email: email })
