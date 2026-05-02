@@ -20,6 +20,7 @@ function LoginScreen({ setToken, setAppEmail }) {
       } else {
         const data = await response.json();
         setToken(data.token);
+        localStorage.setItem("token", data.token);
         setAppEmail(email);
         navigate("/dashboard");
       }

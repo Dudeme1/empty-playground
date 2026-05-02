@@ -5,7 +5,7 @@ import LoginScreen from "../components/LoginScreen";
 import SignupScreen from "../components/SignupScreen";
 
 function App() {
-  const [ token, setToken ] = useState(null);
+  const [ token, setToken ] = useState(localStorage.getItem("token"));
   const [ email, setEmail ] = useState(null);
   return (
     <BrowserRouter>
