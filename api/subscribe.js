@@ -27,7 +27,7 @@ module.exports = async (req, res) => {
       quantity: 1 
     }],
     customer: { email },
-    return_url: "http://localhost:5173/dashboard",
+    return_url: "https://empty-playground.vercel.app/dashboard",
     payment_link: true,
   });
 
